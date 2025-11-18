@@ -1,0 +1,52 @@
+# File Name
+NAME = push_swap
+
+# Directories
+SRCDIR = srcs
+INCDIR = include
+OBJDIR = object
+LIBFTDIR = libft
+
+# Source files
+SRCS = $(addprefix $(SRCDIR)/, \
+check_list_stack.c data_logistics.c error_manage.c \
+stack_logitics_initz.c swapping_stack_fonction.c main.c)
+
+# Object files 
+OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+# Libft
+LIBFT = $(LIBFTDIR)/libft.a
+
+# Flags
+CC = gcc
+RM = rm -rf
+CFLAGS = -Wall -Wextra -Werror -g
+INCLUDE = -I$(INCDIR) -I$(LIBFTDIR)/include
+
+all: $(NAME)
+
+# Creating the obj folder
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(LIBFT):
+	@make -C $(LIBFTDIR)
+
+$(NAME): $(LIBFT) $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+clean:
+	@$(RM) $(OBJDIR)
+	@make -C $(LIBFTDIR) clean
+
+fclean: clean
+	@$(RM) $(NAME)
+	@make -C $(LIBFTDIR) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re
