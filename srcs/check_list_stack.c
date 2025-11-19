@@ -8,9 +8,23 @@ bool	check_arg_is_digit(char *str)
 {
 	size_t	i;
 	long long	number;
+	int			sign;
 
 	i = 0;
 	number = 0;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+		{
+			sign = -1;
+		}
+		i++;
+	}
+	if (!str[i])
+	{
+		return (false);
+	}
 	while (str[i])
 	{
 		if(!ft_isdigit(str[i]))
@@ -18,7 +32,7 @@ bool	check_arg_is_digit(char *str)
 			return (false);
 		}
 		number = (number * 10) + (str[i] - '0');
-		if (number > INT_MAX || number < INT_MIN)
+		if ((sign == 1 && number > INT_MAX) || (sign == -1 && number < INT_MIN))
 		{
 			return (false);
 		}
