@@ -23,6 +23,7 @@ typedef struct		s_build
 	t_stack	b;
 }					t_build;
 
+
 bool	check_arg_is_digit(char *str);
 void	check_duplicate_numbers(t_build *data, int *numbers, int len);
 

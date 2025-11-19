@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 17:50:32 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/18 17:50:32 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/19 11:28:23 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/19 11:28:27 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,27 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 }
 
 void	init_data(int argc, char **argv, t_build *data)
-{
+{	int	i;
+
+	i = 0;
 	argc--;
 	init_stack(data, &data->a, argc);
 	init_stack(data, &data->b, argc);
 	fill_stack(data, &data->a, argc, argv);
-	swap_a(data);
-	printf("%ls",data->a.stack);
+	printf("=====before swap=====\n");
+	while(i < 3)
+	{
+		printf("%d\n", data->a.stack[i]);
+		i++;
+	}
+	swap(&data->a);
+	i = 0;
+	printf("=====after swap=====\n");
+	while(i < 3)
+	{
+		printf("%d\n", data->a.stack[i]);
+		i++;
+	}
+	printf("%ls", &data->a.top);
 }
 
