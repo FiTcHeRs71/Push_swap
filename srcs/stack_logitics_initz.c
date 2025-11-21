@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 11:28:23 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/19 11:28:27 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/21 08:40:59 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/21 08:40:59 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	numbers_mapping(int *numbers, int *rank ,int len)
 			j++;
 		}
 		rank[i] = counter;
-		printf("%d\n",rank[i]);
+		printf("le rank est : %d\n",rank[i]); // attention
 		i++;
 	}
 }
@@ -93,7 +93,9 @@ void	init_data(int argc, char **argv, t_build *data)
 		printf("%d\n", data->a.stack[i]);
 		i++;
 	}
-	swap(&data->a);
+	//push_b(data);
+	ft_parsing(data);
+	//rotate_a(data);
 	i = 0;
 	printf("=====after swap=====\n");
 	while(i < 3)
@@ -101,6 +103,7 @@ void	init_data(int argc, char **argv, t_build *data)
 		printf("%d\n", data->a.stack[i]);
 		i++;
 	}
-	printf("%ls", &data->a.top);
+	//printf("push a : %d\n", data->a.stack[0]);
 }
 
+// enlever les printf

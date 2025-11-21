@@ -1,6 +1,29 @@
 #include "../include/stack.h"
 #include "../include/push_swap.h"
 #include "../libft/include/libft.h"
+#include "../libft/include/ft_printf.h"
+
+int		set_up_value(t_stack *stk, int nb)
+{
+	int		i;
+
+	i = stk->top;
+	while (--nb > 0)
+	{
+		i = next_bot(stk, i);
+	}
+	return(stk->stack[i]);
+}
+
+bool	array_is_full(t_stack *stk)
+{
+	if (stk->stack[stk->bot] == stk->size)
+	{
+		return (true);
+	}
+	else 
+		return (false);
+}
 
 int	current_size(t_stack *stk)
 {
@@ -18,7 +41,7 @@ int	current_size(t_stack *stk)
 	}
 }
 
-int	next_top_free(t_stack *stk, int index)
+int	next_top(t_stack *stk, int index)
 {
 	if (current_size(stk) == 0)
 	{
@@ -34,7 +57,7 @@ int	next_top_free(t_stack *stk, int index)
 	}
 }
 
-int	next_bot_free(t_stack *stk, int index)
+int	next_bot(t_stack *stk, int index)
 {
 	if (current_size(stk) == 0)
 	{

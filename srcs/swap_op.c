@@ -7,9 +7,9 @@ void	swap(t_stack *stk)
 {
 	int	temp;
 
-	temp = stk->stack[stk->top];
-	stk->stack[stk->top] = stk->stack[next_top_free(stk, stk->top)];
-	stk->stack[next_top_free(stk, stk->top)] = temp;
+	temp = stk->stack[next_bot(stk, stk->top)];
+	stk->stack[next_bot(stk, stk->top)] = stk->stack[stk->top];
+	stk->stack[stk->top]= temp;
 }
 void	swap_b(t_build *data)
 {

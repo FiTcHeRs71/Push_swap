@@ -23,6 +23,9 @@ typedef struct		s_build
 	t_stack	b;
 }					t_build;
 
+// parsing.c
+void	ft_parsing(t_build *data);
+void	quick_three(t_build *data);
 
 bool	check_arg_is_digit(char *str);
 void	check_duplicate_numbers(t_build *data, int *numbers, int len);

@@ -7,24 +7,22 @@ void	push(t_stack *src, t_stack *dest)
 {
 	int	dest_idx;
 
-	dest_idx = next_top_free(dest, dest->top);
+	dest_idx = next_top(dest, dest->top);
 	dest->stack[dest_idx] = src->stack[src->top];
 	dest->top = dest_idx;
 	src->stack[src->top] = 0;
-	src->top = next_bot_free(src, src->top);
-
-
+	src->top = next_bot(src, src->top);
 }
 
 void	push_a(t_build *data)
 {
 	push (&data->b, &data->a);
-	ft_printf ("pa");
+	ft_printf ("pa\n");
 }
 void	push_b(t_build *data)
 {
 	push (&data->a, &data->b);
-	ft_printf ("pb");
+	ft_printf ("pb\n");
 }
 
 
