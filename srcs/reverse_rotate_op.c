@@ -6,18 +6,10 @@
 void	reverse_rotate(t_stack *stk)
 {
 
-	if (array_is_full(stk))
-	{
-		stk->top = stk->bot;
-		stk->bot = next_top(stk, stk->bot);
-	}
-	else
-	{
-		stk->top = next_top(stk, stk->top);
-		stk->stack[stk->top] = stk->stack[stk->bot];
-		stk->stack[stk->bot] = 0;
-		stk->bot = next_top(stk, stk->bot);
-	}
+	stk->top = next_top(stk, stk->top);
+	stk->stack[stk->top] = stk->stack[stk->bot];
+	stk->stack[stk->bot] = 0;
+	stk->bot = next_top(stk, stk->bot);
 }
 
 void	reverse_rotate_a(t_build *data)

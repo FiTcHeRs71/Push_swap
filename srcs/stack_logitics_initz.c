@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 08:40:59 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/21 08:40:59 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/21 09:58:09 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/21 09:58:09 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	}
 	check_duplicate_numbers(data, numbers, len);
 	numbers_mapping(numbers, stk->stack, len);
-	//free(numbers); ?
+	stk->bot = len - 1;
+	free(numbers);
 }
 
 void	init_stack(t_build *data, t_stack *stk, int len)

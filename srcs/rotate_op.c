@@ -5,10 +5,13 @@
 
 void	rotate(t_stack *stk)
 {
-	stk->bot = next_bot(stk, stk->bot);
-	stk->stack[stk->bot] = stk->stack[stk->top];
+	int	temp;
+
+	temp = stk->stack[stk->top];
 	stk->stack[stk->top] = 0;
 	stk->top = next_bot(stk, stk->top);
+	stk->bot = next_bot(stk, stk->bot);
+	stk->stack[stk->bot] = temp;
 }
 
 void	rotate_a(t_build *data)

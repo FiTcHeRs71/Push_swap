@@ -17,12 +17,7 @@ int		set_up_value(t_stack *stk, int nb)
 
 bool	array_is_full(t_stack *stk)
 {
-	if (stk->stack[stk->bot] == stk->size)
-	{
-		return (true);
-	}
-	else 
-		return (false);
+	return (current_size(stk) == stk->size);
 }
 
 int	current_size(t_stack *stk)
