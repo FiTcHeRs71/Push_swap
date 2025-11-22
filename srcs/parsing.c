@@ -17,7 +17,11 @@ void	ft_parsing(t_build *data)
 	{
 		quick_five(data);
 	}
-	
+	else
+	{
+		chunck_stack(data);
+	}
+
 }
 
 void	quick_three(t_build *data)
