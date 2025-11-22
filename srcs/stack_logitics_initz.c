@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 09:58:09 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/21 09:58:09 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/21 15:33:42 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/21 15:33:42 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,19 @@
 #include "../include/push_swap.h"
 #include "../libft/include/libft.h"
 
-
+void print_stack(t_stack *stk)
+{
+    int i;
+    int size;
+    
+    size = current_size(stk);
+    i = 1;
+    while (i <= size)
+    {
+        printf("%d\n", set_up_value(stk, i));
+        i++;
+    }
+}
 
 void	numbers_mapping(int *numbers, int *rank ,int len)
 {
@@ -81,29 +93,19 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 }
 
 void	init_data(int argc, char **argv, t_build *data)
-{	int	i;
-
-	i = 0;
+{
 	argc--;
 	init_stack(data, &data->a, argc);
 	init_stack(data, &data->b, argc);
 	fill_stack(data, &data->a, argc, argv);
 	printf("=====before swap=====\n");
-	while(i < 3)
-	{
-		printf("%d\n", data->a.stack[i]);
-		i++;
-	}
+	print_stack(&data->a);
 	//push_b(data);
 	ft_parsing(data);
 	//rotate_a(data);
-	i = 0;
 	printf("=====after swap=====\n");
-	while(i < 3)
-	{
-		printf("%d\n", data->a.stack[i]);
-		i++;
-	}
+	print_stack(&data->a);
+	//print_stack(&data->b);
 	//printf("push a : %d\n", data->a.stack[0]);
 }
 

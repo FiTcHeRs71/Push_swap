@@ -13,6 +13,11 @@ void	ft_parsing(t_build *data)
 	{
 		quick_three(data);
 	}
+	else if (data->a.size == 5)
+	{
+		quick_five(data);
+	}
+	
 }
 
 void	quick_three(t_build *data)
@@ -45,5 +50,27 @@ void	quick_three(t_build *data)
 	{
 		swap_a(data);
 		reverse_rotate_a(data);
+	}
+}
+
+void	quick_five(t_build *data)
+{
+	while (current_size(&data->a) > 3)
+	{
+		if (set_up_value(&data->a, 1) == 1 || set_up_value(&data->a, 1) == 2)
+		{
+			push_b(data);
+		}
+		else
+		{
+			rotate_a(data);
+		}
+	}
+	quick_three(data);
+	push_a(data);
+	push_a(data);
+	if (set_up_value(&data->a, 1) == 2)
+	{
+		swap_a(data);
 	}
 }
