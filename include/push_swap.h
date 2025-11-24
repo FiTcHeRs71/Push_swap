@@ -33,4 +33,29 @@ void	reverse_rotate_a(t_build *data);
 void	reverse_rotate_b(t_build *data);
 void	reverse_rotate_a_b(t_build *data);
 
+// chunck_stack.c
+void	chunck_stack(t_build *data);
+void	go_to_chunck(t_build *data, t_chunck *to_chunck);
+
+//check_quick_sort.c
+void	check_quick_sort(t_build *data, t_chunck *to_chunck);
+void	quick_sort_second(t_build *data, t_chunck *to_chunck);
+void	process_top_b(t_build *data, t_chunck *to_chunck);
+void	process_bot_a(t_build *data, t_chunck *to_chunck);
+void	process_bot_b(t_build *data, t_chunck *to_chunck);
+
+//chunck_utils.c
+int		chunck_value(t_build *data, t_chunck *chunck, int n);
+t_stack	*loc_to_stack(t_build *data, t_loc loc);
+void	sort_one(t_build *data, t_chunck *to_chunck);
+void	sort_two(t_build *data, t_chunck *to_chunck);
+
+//change_stack.c
+int		change_stack(t_build *data, t_loc src, t_loc dest);
+void	move_to_top_b(t_build *data, t_loc dest);
+void	move_to_top_a(t_build *data, t_loc dest);
+void	move_to_bot_b(t_build *data, t_loc dest);
+void	move_to_bot_a(t_build *data, t_loc dest);
+
+
 #endif
