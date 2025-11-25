@@ -21,7 +21,7 @@ void	ft_parsing(t_build *data)
 	{
 		chunck_stack(data);
 	}
-
+	print_stack(&data->a);
 }
 
 void	quick_three(t_build *data)

@@ -3,6 +3,9 @@
 
 # include "stack.h"
 
+//trash utils
+void print_stack(t_stack *stk);
+
 // op_utlis.c
 int		set_up_value(t_stack *stk, int nb);
 int		current_size(t_stack *stk);

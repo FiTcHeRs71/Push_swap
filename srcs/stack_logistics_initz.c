@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_logitics_initz.c                             :+:      :+:    :+:   */
+/*   stack_logistics_initz.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 15:33:42 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/21 15:33:42 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/25 10:45:39 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/25 10:45:39 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,9 @@ void	init_data(int argc, char **argv, t_build *data)
 	printf("=====before swap=====\n");
 	print_stack(&data->a);
 	//push_b(data);
-	ft_parsing(data);
 	//rotate_a(data);
-	printf("=====after swap=====\n");
-	print_stack(&data->a);
+	//printf("=====after swap=====\n");
+	//print_stack(&data->a);
 	//print_stack(&data->b);
 	//printf("push a : %d\n", data->a.stack[0]);
 }
