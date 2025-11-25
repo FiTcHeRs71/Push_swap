@@ -7,8 +7,6 @@
 # include <limits.h>
 # include <stdio.h>
 
-
-
 typedef struct		s_stack
 {
 	int		*stack;

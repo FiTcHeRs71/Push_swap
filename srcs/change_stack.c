@@ -7,24 +7,24 @@ int	change_stack(t_build *data, t_loc src, t_loc dest)
 {
 	if (src == TOP_A)
 	{
-		move_to_top_b(data, dest);
+		move_from_top_a(data, dest);
 	}
 	else if (src == TOP_B)
 	{
-		move_to_top_a(data, dest);
+		move_from_top_b(data, dest);
 	}
 	else if (src == BOT_A)
 	{
-		move_to_bot_b(data, dest);
+		move_from_bottom_a(data, dest);
 	}
 	else if (src == BOT_B)
 	{
-		move_to_bot_a(data, dest);
+		move_from_bottom_b(data, dest);
 	}
 	return (1);
 }
 
-void	move_to_top_b(t_build *data, t_loc dest)
+void	move_from_top_a(t_build *data, t_loc dest)
 {
 	if (dest == TOP_B)
 	{
@@ -41,7 +41,7 @@ void	move_to_top_b(t_build *data, t_loc dest)
 	}
 }
 
-void	move_to_top_a(t_build *data, t_loc dest)
+void	move_from_top_b(t_build *data, t_loc dest)
 {
 	if (dest == TOP_A)
 	{
@@ -58,7 +58,7 @@ void	move_to_top_a(t_build *data, t_loc dest)
 	}
 }
 
-void	move_to_bot_b(t_build *data, t_loc dest)
+void	move_from_bottom_a(t_build *data, t_loc dest)
 {
 	if (dest == TOP_A)
 	{
@@ -76,7 +76,7 @@ void	move_to_bot_b(t_build *data, t_loc dest)
 	}
 }
 
-void	move_to_bot_a(t_build *data, t_loc dest)
+void	move_from_bottom_b(t_build *data, t_loc dest)
 {
 	if (dest == TOP_B)
 	{

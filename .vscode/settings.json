@@ -9,5 +9,6 @@
 		"span": "c",
 		"libft.h": "c",
 		"ft_printf.h": "c"
-	}
+	},
+	"claudeCodeChat.permissions.yoloMode": false
 }

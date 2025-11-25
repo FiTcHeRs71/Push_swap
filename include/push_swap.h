@@ -58,10 +58,10 @@ int	chunck_the_value(t_build *data, t_chunck *chunck, int n);
 
 //change_stack.c
 int		change_stack(t_build *data, t_loc src, t_loc dest);
-void	move_to_top_b(t_build *data, t_loc dest);
-void	move_to_top_a(t_build *data, t_loc dest);
-void	move_to_bot_b(t_build *data, t_loc dest);
-void	move_to_bot_a(t_build *data, t_loc dest);
+void	move_from_bottom_b(t_build *data, t_loc dest);
+void	move_from_bottom_a(t_build *data, t_loc dest);
+void	move_from_top_a(t_build *data, t_loc dest);
+void	move_from_top_b(t_build *data, t_loc dest);
 
 //sort_three.c
 void	sort_three(t_build *data, t_chunck *to_chunck);
