@@ -67,6 +67,7 @@ void	move_from_bottom_a(t_build *data, t_loc dest)
 	else if (dest == TOP_B)
 	{
 		reverse_rotate_a(data);
+		push_b(data);
 	}
 	else if (dest == BOT_B)
 	{

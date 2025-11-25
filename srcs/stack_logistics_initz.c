@@ -6,13 +6,14 @@
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 10:45:39 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/25 10:45:39 by fducrot          ###   ########.ch       */
+/*   Updated: 2025/11/25 18:32:48 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
 #include "../include/push_swap.h"
 #include "../libft/include/libft.h"
+#include "../libft/include/ft_printf.h"
 
 void print_stack(t_stack *stk)
 {
