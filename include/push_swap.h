@@ -1,5 +1,5 @@
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP__H
+# define PUSH_SWAP_H
 
 # include "stack.h"
 
@@ -75,4 +75,11 @@ void	split_chunk(t_build *data, t_chunck *to_chunck, t_bucket *dest);
 void	init_size(t_chunck *low, t_chunck *mid, t_chunck *high);
 void	setup_loc_split(t_loc loc, t_chunck *low, t_chunck *mid, t_chunck *high);
 void	setup_pivots(t_loc loc, int max_size, int *pivot_1, int *pivot_2);
+
+// split_utils.c
+void	max_update_adjust(t_build *data, t_chunck *high);
+bool	checking_is_already_sort(t_build *data, int start);
+bool	check_consecutive(int a, int b, int c, int d);
+void	swap_three_numbers(int *a, int *b, int *c);
+
 #endif

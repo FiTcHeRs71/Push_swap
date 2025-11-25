@@ -20,6 +20,7 @@ void	split_chunk(t_build *data, t_chunck *to_chunck, t_bucket *dest)
 		if (next > max - pivot_2)
 		{
 			dest->high.size += change_stack(data, to_chunck->loc, dest->high.loc);
+			
 		}
 		else if (next > max - pivot_1)
 		{

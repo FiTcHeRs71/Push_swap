@@ -7,6 +7,7 @@
 		"string_view": "c",
 		"ranges": "c",
 		"span": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"ft_printf.h": "c"
 	}
 }
