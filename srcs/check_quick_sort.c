@@ -12,7 +12,7 @@ void	check_quick_sort(t_build *data, t_chunck *to_chunck)
 			{
 				sort_one(data, to_chunck);
 			}
-		else if (set_up_value(&data->a, 1) == chunck_value(data, to_chunck, 2) + 2
+		else if (set_up_value(&data->a, 1) == chunck_value(data, to_chunck, 2) + 1
 			&& to_chunck->size > 1)
 			{
 				quick_sort_second(data, to_chunck);
@@ -38,6 +38,7 @@ void	quick_sort_second(t_build *data, t_chunck *to_chunck)
 	{
 		process_bot_b(data, to_chunck);
 	}
+	to_chunck->size--;
 }
 
 void	process_top_b(t_build *data, t_chunck *to_chunck)
