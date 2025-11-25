@@ -32,7 +32,7 @@ int	chunck_value(t_build *data, t_chunck *chunck, int n)
 
 t_stack	*loc_to_stack(t_build *data, t_loc loc)
 {
-	if (loc == TOP_A || loc == BOT_B)
+	if (loc == TOP_A || loc == BOT_A)
 	{
 		return (&data->a);
 	}
