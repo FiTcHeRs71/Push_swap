@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:18:06 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:18:06 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 14:08:17 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 14:11:58 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,9 @@ void	init_data(int argc, char **argv, t_build *data)
 	init_stack(data, &data->a, argc);
 	init_stack(data, &data->b, argc);
 	fill_stack(data, &data->a, argc, argv);
+	if(checking_is_already_sort(data, 1))
+	{
+		free_node(data);
+		exit(EXIT_SUCCESS);
+	}
 }

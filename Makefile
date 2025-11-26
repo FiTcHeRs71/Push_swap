@@ -6,12 +6,15 @@ SRCDIR = srcs
 INCDIR = include
 OBJDIR = object
 LIBFTDIR = libft
+BONUSDIR = checker_bonus
 
 # Source files
 SRCS = $(addprefix $(SRCDIR)/, \
 change_stack.c chunk_split.c chunk_utils.c error.c input_validation.c \
 op_utils.c parsing.c push_op.c reverse_rotate_op.c rotate_op.c sort_chunk.c \
-sort_optimize.c sort_three.c split_utils.c stack_initz.c swap_op.c print_stack.c main.c)
+sort_optimize.c sort_three.c split_utils.c stack_initz.c swap_op.c print_stack.c)
+
+MAIN = $(addprefix $(SRCDIR)/, main.c)
 
 # Object files 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
@@ -40,6 +43,8 @@ $(LIBFT):
 $(NAME): $(LIBFT) $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
+bonus :
+
 clean:
 	@$(RM) $(OBJDIR)
 	@make -C $(LIBFTDIR) clean
@@ -50,4 +55,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
