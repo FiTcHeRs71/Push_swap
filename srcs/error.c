@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:35:48 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:36:28 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 11:07:03 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 11:07:03 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	free_node(t_build *data)
 void	ft_error(t_build *data)
 {
 	free_node(data);
-	ft_printf("Error");
+	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
