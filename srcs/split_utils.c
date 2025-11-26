@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 25/11/2025 13:11:38 by fducrot           #+#    #+#             */
-/*   Updated: 26/11/2025 10:13:56 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 15:47:29 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 15:47:34 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ bool	checking_is_already_sort(t_build *data, int start)
 	{
 		i = next_bot(stk_a, i);
 	}
+	if (stk_a->array[i] != 1)
+		return (false);
 	while (stk_a->array[i] != data->a.size)
 	{
 		value = stk_a->array[i];

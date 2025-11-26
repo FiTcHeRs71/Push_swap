@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_op.c                                        :+:      :+:    :+:   */
+/*   sort_chunk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:24:54 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:24:54 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 15:44:51 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 15:44:51 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	chunck_stack(t_build *data)
 
 	all_chunck.loc = TOP_A;
 	all_chunck.size = data->a.size;
-	go_to_chunck(data, &all_chunck);
+	sort_chunk(data, &all_chunck);
 }
 
-void	go_to_chunck(t_build *data, t_chunck *to_chunck)
+void	sort_chunk(t_build *data, t_chunck *to_chunck)
 {
 	t_bucket	dest;
 
@@ -44,9 +44,9 @@ void	go_to_chunck(t_build *data, t_chunck *to_chunck)
 		return ;
 	}
 	split_chunk(data, to_chunck, &dest);
-	go_to_chunck(data, &dest.high);
-	go_to_chunck(data, &dest.mid);
-	go_to_chunck(data, &dest.low);
+	sort_chunk(data, &dest.high);
+	sort_chunk(data, &dest.mid);
+	sort_chunk(data, &dest.low);
 }
 
 void	sort_one(t_build *data, t_chunck *to_chunck)

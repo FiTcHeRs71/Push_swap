@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 14:08:17 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 14:11:58 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 15:47:00 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 15:47:00 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 	stk->size = len;
 	ft_bzero(stk->array, len);
 }
-
+ 
 void	init_data(int argc, char **argv, t_build *data)
 {
 	argc--;

@@ -8,6 +8,7 @@ int	main(int argc, char **argv)
 
 	;
 	init_data(argc, argv, &data);
+	ft_parsing(&data);
 	line = get_next_line(0);
 	while (line)
 	{
