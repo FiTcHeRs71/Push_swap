@@ -8,7 +8,7 @@ OBJDIR = obj
 
 # Source files
 SRCS = $(addprefix $(SRCDIR)/, \
-	ft_printf.c parse.c ft_print_char.c 							\
+	ft_printf.c parse.c ft_print_char.c get_next_line_utils.c  get_next_line.c\
 	ft_print_int.c ft_print_void.c ft_tolower.c ft_toupper.c 		\
 	ft_isprint.c ft_isascii.c ft_isalnum.c ft_isdigit.c 			\
 	ft_isalpha.c ft_atoi.c ft_strlen.c ft_strlcat.c ft_strncmp.c	\

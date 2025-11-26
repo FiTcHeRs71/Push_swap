@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 09:09:27 by fducrot           #+#    #+#             */
-/*   Updated: 2025/10/11 09:09:27 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 11:35:56 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 11:36:13 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include "libft.h"
+# include "get_next_line.h"
 # include <stdarg.h>
 # include <stdio.h>
 

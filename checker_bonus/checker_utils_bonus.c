@@ -4,10 +4,10 @@ bool	is_sorted(t_stack *stk)
 {
 	int	i;
 
-	i = 0;
-	while(i > stk->size) // + 1?
+	i = 1;
+	while(i < stk->size) // + 1?
 	{
-		if (stk->array[i] > stk->array[i])
+		if (stk->array[i] < stk->array[i - 1])
 		{
 			return (false);
 		}
