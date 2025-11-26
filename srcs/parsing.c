@@ -1,13 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   op_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/26 10:24:39 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 10:24:39 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "../include/stack.h"
 #include "../include/push_swap.h"
-#include "../libft/include/libft.h"
 
 void	ft_parsing(t_build *data)
 {
 	if (data->a.size <= 1)
 	{
-		return;
+		return ;
 	}
 	else if (data->a.size == 3)
 	{
@@ -21,7 +30,6 @@ void	ft_parsing(t_build *data)
 	{
 		chunck_stack(data);
 	}
-	print_stack(&data->a);
 }
 
 void	quick_three(t_build *data)
@@ -30,27 +38,21 @@ void	quick_three(t_build *data)
 	int	second;
 	int	third;
 
-	first = set_up_value(&data->a, 1);
-	second = set_up_value(&data->a, 2);
-	third = set_up_value(&data->a, 3);
-	if (first > second && third > second && third > first) // 2 1 3
-	{
+	first = get_value_at(&data->a, 1);
+	second = get_value_at(&data->a, 2);
+	third = get_value_at(&data->a, 3);
+	if (first > second && third > second && third > first)
 		swap_a(data);
-	}
-	else if (first > second && first > third && second < third) // 3 1 2
-	{
+	else if (first > second && first > third && second < third)
 		rotate_a(data);
-	}
-	else if (first < second && first > third && second > third) // 2 3 1
-	{
+	else if (first < second && first > third && second > third)
 		reverse_rotate_a(data);
-	}
-	else if (first < second && first < third && second > third) // 1 3 2
+	else if (first < second && first < third && second > third)
 	{
 		swap_a(data);
 		rotate_a(data);
 	}
-	else if (first > second && first > third && second > third) // 3 2 1
+	else if (first > second && first > third && second > third)
 	{
 		swap_a(data);
 		reverse_rotate_a(data);
@@ -61,7 +63,7 @@ void	quick_five(t_build *data)
 {
 	while (current_size(&data->a) > 3)
 	{
-		if (set_up_value(&data->a, 1) == 1 || set_up_value(&data->a, 1) == 2)
+		if (get_value_at(&data->a, 1) == 1 || get_value_at(&data->a, 1) == 2)
 		{
 			push_b(data);
 		}
@@ -73,7 +75,7 @@ void	quick_five(t_build *data)
 	quick_three(data);
 	push_a(data);
 	push_a(data);
-	if (set_up_value(&data->a, 1) == 2)
+	if (get_value_at(&data->a, 1) == 2)
 	{
 		swap_a(data);
 	}

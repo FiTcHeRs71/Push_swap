@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_op.c                                          :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:25:16 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:25:16 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 10:04:17 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 10:24:26 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	swap(t_stack *stk)
+void	free_node(t_build *data)
 {
-	int	temp;
-
-	temp = stk->array[next_bot(stk, stk->top)];
-	stk->array[next_bot(stk, stk->top)] = stk->array[stk->top];
-	stk->array[stk->top] = temp;
+	if (data->a.array)
+	{
+		free (data->a.array);
+	}
+	if (data->b.array)
+	{
+		free (data->b.array);
+	}
 }
 
-void	swap_b(t_build *data)
+void	ft_error(t_build *data)
 {
-	swap(&data->b);
-	ft_printf("sb\n");
-}
-
-void	swap_a(t_build *data)
-{
-	swap(&data->a);
-	ft_printf("sa\n");
-}
-
-void	swap_a_b(t_build *data)
-{
-	swap(&data->a);
-	swap(&data->b);
-	ft_printf("ss\n");
+	free_node(data);
+	exit(EXIT_FAILURE);
 }

@@ -9,9 +9,9 @@ LIBFTDIR = libft
 
 # Source files
 SRCS = $(addprefix $(SRCDIR)/, \
-change_stack.c check_list_stack.c check_quick_sort.c chunck_utils.c \
-chunck_stack.c error_manage.c op_utils.c parsing.c push_op.c reverse_rotate_op.c \
-rotate_op.c sort_three.c split_utils.c split_chunck.c stack_logistics_initz.c swap_op.c main.c)
+change_stack.c chunk_split.c chunk_utils.c error.c input_validation.c \
+op_utils.c parsing.c push_op.c reverse_rotate_op.c rotate_op.c sort_chunk.c \
+sort_optimize.c sort_three.c split_utils.c stack_initz.c swap_op.c print_stack.c main.c)
 
 # Object files 
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)

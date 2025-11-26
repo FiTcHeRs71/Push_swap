@@ -1,7 +1,16 @@
-#include "../include/stack.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   change_stack.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/26 10:24:18 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 10:24:18 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
-#include "../libft/include/libft.h"
-#include "../libft/include/ft_printf.h"
 
 int	change_stack(t_build *data, t_loc src, t_loc dest)
 {

@@ -1,7 +1,16 @@
-#include "../include/stack.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   chunk_split.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 24/11/2025 13:44:01 by fducrot           #+#    #+#             */
+/*   Updated: 26/11/2025 10:01:32 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
-#include "../libft/include/libft.h"
-#include "../libft/include/ft_printf.h"
 
 void	split_chunk(t_build *data, t_chunck *to_chunck, t_bucket *dest)
 {
@@ -13,25 +22,20 @@ void	split_chunk(t_build *data, t_chunck *to_chunck, t_bucket *dest)
 	init_size(&dest->low, &dest->mid, &dest->high);
 	setup_loc_split(to_chunck->loc, &dest->low, &dest->mid, &dest->high);
 	setup_pivots(to_chunck->loc, to_chunck->size, &pivot_1, &pivot_2);
-	max = setup_max_size(data, to_chunck);
+	max = chunk_find_max(data, to_chunck);
 	while (to_chunck->size--)
 	{
-		next = chunck_the_value(data, to_chunck, 1);
+		next = chunk_get_nth(data, to_chunck, 1);
 		if (next > max - pivot_2)
 		{
-			dest->high.size += change_stack(data, to_chunck->loc, dest->high.loc);
-			
+			dest->high.size += change_stack(data, to_chunck->loc,
+					dest->high.loc);
 		}
 		else if (next > max - pivot_1)
-		{
-			dest->mid.size += change_stack(data,to_chunck->loc, dest->mid.loc);
-		}
+			dest->mid.size += change_stack(data, to_chunck->loc, dest->mid.loc);
 		else
-		{
 			dest->low.size += change_stack(data, to_chunck->loc, dest->low.loc);
-		}
 	}
-
 }
 
 void	init_size(t_chunck *low, t_chunck *mid, t_chunck *high)
@@ -61,7 +65,7 @@ void	setup_loc_split(t_loc loc, t_chunck *low, t_chunck *mid, t_chunck *high)
 		mid->loc = BOT_A;
 		high->loc = TOP_A;
 	}
-	else if ( loc == BOT_B)
+	else if (loc == BOT_B)
 	{
 		low->loc = TOP_B;
 		mid->loc = BOT_A;

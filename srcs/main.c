@@ -1,9 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/26 10:24:32 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 10:24:32 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "../include/stack.h"
 #include "../include/push_swap.h"
-#include "../libft/include/libft.h"
 
-int main	(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_build	data;
 
@@ -11,5 +20,4 @@ int main	(int argc, char **argv)
 	ft_parsing(&data);
 	free_node(&data);
 	exit(EXIT_SUCCESS);
-	//ft_parsing(&data);
 }

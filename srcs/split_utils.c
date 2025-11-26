@@ -1,19 +1,32 @@
-#include "../include/stack.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 25/11/2025 13:11:38 by fducrot           #+#    #+#             */
+/*   Updated: 26/11/2025 10:13:56 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
-#include "../libft/include/libft.h"
-#include "../libft/include/ft_printf.h"
 
 void	max_update_adjust(t_build *data, t_chunck *high)
 {
 	t_stack	*stk_a;
-	
+
 	stk_a = &data->a;
-	if (high->loc == TOP_A && high->size == 3 && check_consecutive(set_up_value(stk_a, 1), set_up_value(stk_a, 2), set_up_value(stk_a, 3), set_up_value(stk_a, 4)) && checking_is_already_sort(data, 4))
+	if (high->loc == TOP_A && high->size == 3
+		&& check_consecutive(get_value_at(stk_a, 1), get_value_at(stk_a, 2),
+			get_value_at(stk_a, 3), get_value_at(stk_a, 4))
+		&& checking_is_already_sort(data, 4))
 	{
 		sort_three(data, high);
-		return;
+		return ;
 	}
-	if (high->loc == TOP_A && set_up_value(stk_a, 1) == set_up_value(stk_a, 3) - 1 && checking_is_already_sort(data, 3))
+	if (high->loc == TOP_A && get_value_at(stk_a, 1) == get_value_at(stk_a, 3)
+		- 1 && checking_is_already_sort(data, 3))
 	{
 		swap_a(data);
 		high->size--;
@@ -28,7 +41,7 @@ bool	checking_is_already_sort(t_build *data, int start)
 {
 	int		i;
 	int		value;
-	t_stack *stk_a;
+	t_stack	*stk_a;
 
 	stk_a = &data->a;
 	i = stk_a->top;
@@ -36,11 +49,11 @@ bool	checking_is_already_sort(t_build *data, int start)
 	{
 		i = next_bot(stk_a, i);
 	}
-	while (stk_a->stack[i] != data->a.size)
+	while (stk_a->array[i] != data->a.size)
 	{
-		value = stk_a->stack[i];
+		value = stk_a->array[i];
 		i = next_bot(stk_a, i);
-		if (stk_a->stack[i] !=  value + 1)
+		if (stk_a->array[i] != value + 1)
 		{
 			return (false);
 		}
