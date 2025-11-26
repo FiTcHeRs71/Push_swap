@@ -54,40 +54,6 @@ void	define_new_top(t_build *data, t_chunck *to_chunck)
 	}
 }
 
-/*int	chunck_max_value(t_build *data, t_chunck *chunck)
-{
-	t_stack	*stk;
-	int		size;
-	int		max;
-	int		i;
-
-	stk = loc_to_stack(data, chunck->loc);
-	size = chunck->size;
-	max = 0;
-	if (chunck->loc == TOP_A || chunck->loc == TOP_B)
-	{
-		i = stk->top;
-	}
-	else if (chunck->loc == BOT_A || chunck->loc == BOT_B)
-	{
-		i = stk->bot;
-	}
-	while (size--)
-	{
-		if (stk->stack[i] > max)
-			max = stk->stack[i];
-		if (chunck->loc == TOP_A || chunck->loc == TOP_B)
-		{
-			i = next_down(stk, i);
-		}
-		else if (chunck->loc == BOT_A || chunck->loc == BOT_B)
-		{
-			i = next_up(stk, i);
-		}
-	}
-	return (max);
-}*/
-
 int	setup_max_size(t_build *data, t_chunck *chunck)
 {
 	t_stack	*stk;
