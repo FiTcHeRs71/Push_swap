@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 07:15:27 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 07:15:47 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 08:20:31 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 08:20:31 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,15 @@ bool			check_arg_is_digit(char *str);
 void			check_duplicate_numbers(t_build *data, int *numbers, int len);
 int				ft_counter(char const *s, char c);
 
+// stack_initz.c
 void			numbers_mapping(int *numbers, int *rank, int len);
 void			fill_stack(t_build *data, t_stack *stk, int len, char **argv);
+void			fill_stack_split(t_build *data, t_stack *stk, int len,
+					char **argv);
 void			init_stack(t_build *data, t_stack *stk, int len);
+
+// initz_utils.c
 void			init_data(int argc, char **argv, t_build *data);
+void			init_data_split(int argc, char **argv, t_build *data);
 
 #endif

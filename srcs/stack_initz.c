@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 07:54:22 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 07:55:17 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 09:30:09 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 09:30:22 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,35 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	{
 		if (!check_arg_is_digit(argv[i]))
 		{
+			free(numbers);
 			ft_error(data);
 		}
 		numbers[i - 1] = ft_atoi(argv[i]);
+		i++;
+	}
+	check_duplicate_numbers(data, numbers, len);
+	numbers_mapping(numbers, stk->array, len);
+	stk->bot = len - 1;
+	free(numbers);
+}
+void	fill_stack_split(t_build *data, t_stack *stk, int len, char **argv)
+{
+	int		*numbers;
+	size_t	i;
+
+	i = 0;
+	numbers = malloc(len * sizeof(int));
+	if (!numbers)
+	{
+		ft_error(data);
+	}
+	while (argv[i])
+	{
+		if (!check_arg_is_digit(argv[i]))
+		{
+			ft_error(data);
+		}
+		numbers[i] = ft_atoi(argv[i]);
 		i++;
 	}
 	check_duplicate_numbers(data, numbers, len);
@@ -73,17 +99,4 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 	stk->bot = 0;
 	stk->size = len;
 	ft_bzero(stk->array, len);
-}
- 
-void	init_data(int argc, char **argv, t_build *data)
-{
-	init_stack(data, &data->a, argc);
-	init_stack(data, &data->b, argc);
-	fill_stack(data, &data->a, argc, argv);
-	print_stack(&data->a);
-	if(checking_is_already_sort(data, 1))
-	{
-		free_node(data);
-		exit(EXIT_SUCCESS);
-	}
 }

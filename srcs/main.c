@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 07:55:23 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 07:56:14 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 09:27:26 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 09:27:37 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	main(int argc, char **argv)
 	{
 		elements = ft_split(argv[1], ' ');
 		size = ft_counter(argv[1], ' ');
-		init_data(size, elements, &data);
+		init_data_split(size, elements, &data);
+		ft_free(elements,size);
 	}
 	else if (argc > 2)
 	{
-		argc--;
-		init_data(argc, argv, &data);
+		init_data(argc - 1, argv, &data);
 	}
 	ft_parsing(&data);
 	free_node(&data);

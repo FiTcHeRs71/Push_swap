@@ -16,14 +16,15 @@ int	main(int argc, char **argv)
 	{
 		elements = ft_split(argv[1], ' ');
 		size = ft_counter(argv[1], ' ');
-		init_data(size, elements, &data);
+		init_data_split(size, elements, &data);
+		ft_free(elements, size);
 	}
 	else if (argc > 2)
 	{
 		init_data(argc, argv, &data);
 	}
 	line = get_next_line(0);
-	while (!line)
+	while (line)
 	{
 		trimmed = ft_strtrim(line, "\n");
 		free(line);
