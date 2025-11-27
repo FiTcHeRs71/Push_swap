@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 07:54:04 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 07:54:11 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 11:45:25 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 11:45:25 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "../libft/include/ft_printf.h"
 # include "operations.h"
 # include "stack.h"
-
-void	print_stack(t_stack *stk);
 
 // op_utlis.c
 int		get_value_at(t_stack *stk, int nb);

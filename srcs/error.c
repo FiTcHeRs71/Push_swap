@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:07:03 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 11:07:03 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 14:53:27 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 14:55:19 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	free_node(t_build *data)
 {
-	if (data->a.array)
+	if (data && data->a.array)
 	{
 		free(data->a.array);
 	}
-	if (data->b.array)
+	if (data && data->b.array)
 	{
 		free(data->b.array);
 	}
@@ -27,6 +27,6 @@ void	free_node(t_build *data)
 void	ft_error(t_build *data)
 {
 	free_node(data);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }

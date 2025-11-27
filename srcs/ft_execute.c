@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 09:13:29 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 09:14:36 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 15:18:23 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 15:18:23 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_parsing(t_build *data)
+void	ft_execute(t_build *data)
 {
 	if (data->a.size <= 1)
 	{

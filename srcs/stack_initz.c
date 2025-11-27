@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:38:26 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 10:39:04 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 17:10:59 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 17:10:59 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	int		*numbers;
 	size_t	i;
 
-	i = 1;
-	numbers = malloc(len * sizeof(int));
+	i = 0;
+	numbers = ft_calloc(len , sizeof(int));
 	if (!numbers)
 	{
 		ft_error(data);
@@ -63,31 +63,9 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	free(numbers);
 }
 
-void	fill_stack_split(t_build *data, t_stack *stk, int len, char **argv)
-{
-	int		*numbers;
-	size_t	i;
-
-	i = 0;
-	numbers = malloc(len * sizeof(int));
-	if (!numbers)
-	{
-		ft_error(data);
-	}
-	while (argv[i])
-	{
-		numbers[i] = ft_atoi(argv[i]);
-		i++;
-	}
-	check_duplicate_numbers(data, numbers, len);
-	numbers_mapping(numbers, stk->array, len);
-	stk->bot = len - 1;
-	free(numbers);
-}
-
 void	init_stack(t_build *data, t_stack *stk, int len)
 {
-	stk->array = malloc(len * sizeof(int));
+	stk->array = ft_calloc(len , sizeof(int));
 	if (!stk->array)
 	{
 		ft_error(data);
@@ -107,8 +85,8 @@ void	checking_elements(char **elements, int size)
 	{
 		if (!check_arg_is_digit(elements[i]))
 		{
-			ft_free(elements, size);
-			ft_printf("Error\n");
+			ft_free_2d_array(elements, size);
+			ft_putstr_fd("Error\n", 2);
 			exit(EXIT_FAILURE);
 		}
 		i++;

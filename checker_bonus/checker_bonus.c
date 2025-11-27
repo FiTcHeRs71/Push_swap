@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:39:22 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 11:39:33 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 17:16:59 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 17:17:19 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	ft_cheking_argc_argv(int argc, char **argv, t_build *data)
 		elements = ft_split(argv[1], ' ');
 		size = ft_counter(argv[1], ' ');
 		checking_elements(elements, size);
-		init_data_split(size, elements, &(*data));
-		ft_free(elements, size);
+		init_data(size, elements, &(*data));
+		ft_free_2d_array(elements, size);
 	}
 	else if (argc > 2)
 		init_data(argc, argv, &(*data));

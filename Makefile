@@ -13,8 +13,8 @@ BONUSDIR = checker_bonus
 # Source files
 SRCS = $(addprefix $(SRCDIR)/, \
 change_stack.c chunk_split.c chunk_utils.c error.c initz_utils.c input_validation.c \
-op_utils.c parsing.c push_op.c reverse_rotate_op.c rotate_op.c sort_chunk.c \
-sort_optimize.c sort_three.c split_utils.c stack_initz.c swap_op.c print_stack.c)
+op_utils.c ft_parsing.c push_op.c reverse_rotate_op.c rotate_op.c sort_chunk.c \
+sort_optimize.c sort_three.c split_utils.c stack_initz.c ft_execute.c swap_op.c)
 
 MAIN = $(SRCDIR)/main.c
 

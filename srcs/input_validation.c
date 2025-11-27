@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 07:15:03 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 07:15:03 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 14:32:09 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 14:32:47 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int	ft_counter(char const *s, char c)
 		while ((s[i] && s[i] != c))
 			i++;
 	}
+	if (count == 1)
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
 	return (count);
 }
 
@@ -38,15 +43,15 @@ bool	check_arg_is_digit(char *str)
 {
 	size_t		i;
 	long long	number;
-	int			sign;
+	int			s;
 
 	i = 0;
 	number = 0;
-	sign = 1;
+	s = 1;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign = -1;
+			s = -1;
 		i++;
 	}
 	if (!str[i])
@@ -56,7 +61,7 @@ bool	check_arg_is_digit(char *str)
 		if (!ft_isdigit(str[i]))
 			return (false);
 		number = (number * 10) + (str[i] - '0');
-		if ((sign == 1 && number > INT_MAX) || (sign == -1 && number < INT_MIN))
+		if ((s == 1 && number > INT_MAX) || (s == -1 && number > 2147483648))
 			return (false);
 		i++;
 	}

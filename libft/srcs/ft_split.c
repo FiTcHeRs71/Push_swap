@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 11/10/2025 09:02:13 by fducrot           #+#    #+#             */
-/*   Updated: 11/10/2025 09:14:04 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 15:20:29 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 15:21:17 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include "../include/libft.h"
 
-void	ft_free(char **tab, size_t count)
+void	ft_free_2d_array(char **tab, size_t count)
 {
 	while (count > 0)
 	{
@@ -65,7 +65,7 @@ char	**ft_complet_array(char **array_of_string, char c, char const *s)
 		array_of_string[y] = ft_substr(s, start, i - start);
 		if (!array_of_string[y])
 		{
-			return (ft_free(array_of_string, y), NULL);
+			return (ft_free_2d_array(array_of_string, y), NULL);
 		}
 		y++;
 	}

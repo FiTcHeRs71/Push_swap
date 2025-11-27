@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:29:31 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 10:29:43 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 16:36:47 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 16:36:47 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ typedef struct s_bucket
 	t_chunck	high;
 }				t_bucket;
 
-// parsing.c
-void			ft_parsing(t_build *data);
+// ft_execute.c
+void			ft_execute(t_build *data);
 void			quick_three(t_build *data);
 void			quick_five(t_build *data);
 
@@ -75,5 +75,8 @@ void			checking_elements(char **elements, int size);
 // initz_utils.c
 void			init_data(int argc, char **argv, t_build *data);
 void			init_data_split(int argc, char **argv, t_build *data);
+
+// ft_parsing.c
+void	ft_parsing(char **argv, t_build *data);
 
 #endif
