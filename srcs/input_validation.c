@@ -5,12 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 19/11/2025 09:57:11 by fducrot           #+#    #+#             */
-/*   Updated: 26/11/2025 10:04:53 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 07:15:03 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 07:15:03 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	ft_counter(char const *s, char c)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (!s[i])
+			break ;
+		count++;
+		while ((s[i] && s[i] != c))
+			i++;
+	}
+	return (count);
+}
 
 bool	check_arg_is_digit(char *str)
 {

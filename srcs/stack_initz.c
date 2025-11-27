@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 15:47:00 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 15:47:00 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 07:54:22 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 07:55:17 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ void	init_stack(t_build *data, t_stack *stk, int len)
  
 void	init_data(int argc, char **argv, t_build *data)
 {
-	argc--;
 	init_stack(data, &data->a, argc);
 	init_stack(data, &data->b, argc);
 	fill_stack(data, &data->a, argc, argv);
+	print_stack(&data->a);
 	if(checking_is_already_sort(data, 1))
 	{
 		free_node(data);

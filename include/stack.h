@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:19:47 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:20:12 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 07:15:27 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 07:15:47 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void			go_to_chunck(t_build *data, t_chunck *all_chunck);
 
 bool			check_arg_is_digit(char *str);
 void			check_duplicate_numbers(t_build *data, int *numbers, int len);
+int				ft_counter(char const *s, char c);
 
 void			numbers_mapping(int *numbers, int *rank, int len);
 void			fill_stack(t_build *data, t_stack *stk, int len, char **argv);

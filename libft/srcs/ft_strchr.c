@@ -6,7 +6,7 @@
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:35:13 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 15:35:13 by fducrot          ###   ########.ch       */
+/*   Updated: 2025/11/26 16:21:00 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!*s)
+	if (!s)
 	{
 		return (NULL);
 	}

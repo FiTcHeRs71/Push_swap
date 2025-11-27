@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:23:43 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:24:08 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 07:54:04 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 07:54:11 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "../libft/include/ft_printf.h"
 # include "operations.h"
 # include "stack.h"
-# include "../libft/include/ft_printf.h"
+
+void	print_stack(t_stack *stk);
 
 // op_utlis.c
 int		get_value_at(t_stack *stk, int nb);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_utils.c                                         :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 10:24:39 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/26 10:24:39 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 07:56:27 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 07:56:27 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_parsing(t_build *data)
 	{
 		chunck_stack(data);
 	}
+	print_stack(&data->a);
 }
 
 void	quick_three(t_build *data)
