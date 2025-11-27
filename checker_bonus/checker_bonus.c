@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:37:04 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 11:37:27 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 11:39:22 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 11:39:22 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,4 @@ void	ft_cheking_argc_argv(int argc, char **argv, t_build *data)
 	else if (argc > 2)
 		init_data(argc, argv, &(*data));
 }
+

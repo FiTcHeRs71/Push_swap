@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:36:45 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 11:36:55 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 11:39:13 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 11:39:13 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ bool	execute_instruction(t_build *data, char *cmd);
 
 // main.c
 void	ft_cheking_argc_argv(int argc, char **argv, t_build *data);
+
 
 #endif
