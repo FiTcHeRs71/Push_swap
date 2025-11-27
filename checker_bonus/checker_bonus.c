@@ -6,37 +6,20 @@
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 10:41:55 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 10:58:16 by fducrot          ###   ########.ch       */
+/*   Updated: 2025/11/27 11:16:18 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/checker_bonus.h"
-
-void	ft_read_instruction(void)
-{
-	t_build	data;
-	char	*line;
-	char	*trimmed;
-
-	line = get_next_line(0);
-	while (line)
-	{
-		trimmed = ft_strtrim(line, "\n");
-		free(line);
-		if (!trimmed)
-			ft_error(&data);
-		execute_instruction(&data, trimmed);
-		free(trimmed);
-		line = get_next_line(0);
-	}
-}
 
 int	main(int argc, char **argv)
 {
 	t_build	data;
 	int		size;
 	char	**elements;
-
+	char	*line;
+	char	*trimmed;
+	
 	if (argc == 1)
 		return (0);
 	if (argc == 2)
@@ -49,7 +32,17 @@ int	main(int argc, char **argv)
 	}
 	else if (argc > 2)
 		init_data(argc, argv, &data);
-	ft_read_instruction();
+	line = get_next_line(0);
+	while (line)
+	{
+		trimmed = ft_strtrim(line, "\n");
+		free(line);
+		if (!trimmed)
+			ft_error(&data);
+		execute_instruction(&data, trimmed);
+		free(trimmed);
+		line = get_next_line(0);
+	}
 	if (checking_is_already_sort(&data, 1) && current_size(&data.b) == 0)
 		ft_printf("OK\n");
 	else
