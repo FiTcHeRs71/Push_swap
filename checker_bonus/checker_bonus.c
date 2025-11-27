@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:41:55 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 11:16:18 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 11:37:04 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 11:37:27 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,10 @@
 int	main(int argc, char **argv)
 {
 	t_build	data;
-	int		size;
-	char	**elements;
 	char	*line;
 	char	*trimmed;
-	
-	if (argc == 1)
-		return (0);
-	if (argc == 2)
-	{
-		elements = ft_split(argv[1], ' ');
-		size = ft_counter(argv[1], ' ');
-		checking_elements(elements, size);
-		init_data_split(size, elements, &data);
-		ft_free(elements, size);
-	}
-	else if (argc > 2)
-		init_data(argc, argv, &data);
+
+	ft_cheking_argc_argv(argc, argv, &data);
 	line = get_next_line(0);
 	while (line)
 	{
@@ -49,4 +36,23 @@ int	main(int argc, char **argv)
 		ft_printf("KO\n");
 	free_node(&data);
 	exit(EXIT_SUCCESS);
+}
+
+void	ft_cheking_argc_argv(int argc, char **argv, t_build *data)
+{
+	int		size;
+	char	**elements;
+
+	if (argc == 1)
+		exit(0);
+	if (argc == 2)
+	{
+		elements = ft_split(argv[1], ' ');
+		size = ft_counter(argv[1], ' ');
+		checking_elements(elements, size);
+		init_data_split(size, elements, &(*data));
+		ft_free(elements, size);
+	}
+	else if (argc > 2)
+		init_data(argc, argv, &(*data));
 }
