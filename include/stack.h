@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 08:20:31 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 08:20:31 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 10:29:31 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 10:29:43 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void			fill_stack(t_build *data, t_stack *stk, int len, char **argv);
 void			fill_stack_split(t_build *data, t_stack *stk, int len,
 					char **argv);
 void			init_stack(t_build *data, t_stack *stk, int len);
+void			checking_elements(char **elements, int size);
 
 // initz_utils.c
 void			init_data(int argc, char **argv, t_build *data);

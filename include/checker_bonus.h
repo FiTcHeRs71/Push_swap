@@ -1,10 +1,19 @@
-#ifndef CHECKER_H
-# define CHECKER_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/27 11:03:15 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 11:03:21 by fducrot          ###   ########.ch       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # include "../include/push_swap.h"
-
-// checker_bonus.c
-//bool	is_sorted(t_stack *stk);
 
 // checker_utils_bonus.c
 bool	exec_push(t_build *data, char *cmd);

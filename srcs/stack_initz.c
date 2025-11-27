@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 09:30:09 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 09:30:22 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/27 10:38:26 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/27 10:39:04 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	stk->bot = len - 1;
 	free(numbers);
 }
+
 void	fill_stack_split(t_build *data, t_stack *stk, int len, char **argv)
 {
 	int		*numbers;
@@ -75,10 +76,6 @@ void	fill_stack_split(t_build *data, t_stack *stk, int len, char **argv)
 	}
 	while (argv[i])
 	{
-		if (!check_arg_is_digit(argv[i]))
-		{
-			ft_error(data);
-		}
 		numbers[i] = ft_atoi(argv[i]);
 		i++;
 	}
@@ -99,4 +96,21 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 	stk->bot = 0;
 	stk->size = len;
 	ft_bzero(stk->array, len);
+}
+
+void	checking_elements(char **elements, int size)
+{
+	int	i;
+
+	i = 0;
+	while (elements[i])
+	{
+		if (!check_arg_is_digit(elements[i]))
+		{
+			ft_free(elements, size);
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
 }
