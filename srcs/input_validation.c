@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 13:41:07 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 13:57:43 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 14:47:51 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 14:47:51 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ int	ft_counter(char *s, char c)
 		count++;
 		while ((s[i] && s[i] != c))
 			i++;
-	}
-	if (count <= 1)
-	{
-		free(s);
-		//ft_putstr_fd("Error\n", 2);
-		exit(EXIT_FAILURE);
 	}
 	return (count);
 }
@@ -82,11 +76,11 @@ bool	check_duplicate_numbers(int *numbers, int len)
 		{
 			if (numbers[i] == numbers[j])
 			{
-				return(false);
+				return (false);
 			}
 			j++;
 		}
 		i++;
 	}
-	return(true);
+	return (true);
 }

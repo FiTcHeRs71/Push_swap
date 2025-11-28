@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 12:54:20 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 12:54:20 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 15:01:01 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 15:01:08 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ bool	array_is_full(t_stack *stk);
 // erroc .c
 void	ft_error(t_build *data);
 void	free_node(t_build *data);
+void	cleanup_and_error(t_build *data, int *numbers);
 
 // chunck_stack.c
 void	chunck_stack(t_build *data);

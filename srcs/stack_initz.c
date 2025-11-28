@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 11:51:37 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 12:47:24 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 15:03:19 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 15:05:32 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,12 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	{
 		if (!check_arg_is_digit(argv[i]))
 		{
-			free(numbers);
-			ft_error(data);
+			cleanup_and_error(data, numbers);
 		}
 		numbers[i] = ft_atoi(argv[i]);
 		i++;
 	}
-	if(!check_duplicate_numbers(numbers, len))
+	if (!check_duplicate_numbers(numbers, len))
 	{
 		ft_free_2d_array(argv, len);
 		free(numbers);
@@ -80,7 +79,7 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 
 void	checking_elements(char **elements, int size)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (elements[i])
@@ -102,6 +101,7 @@ void	init_data(int size, char **elements, t_build *data)
 	fill_stack(data, &data->a, size, elements);
 	if (checking_is_already_sort(data, 1))
 	{
+		ft_free_2d_array(elements, size);
 		free_node(data);
 		exit(EXIT_SUCCESS);
 	}

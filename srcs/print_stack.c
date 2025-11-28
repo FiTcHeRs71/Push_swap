@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   print_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:07:04 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 15:07:04 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/26 10:21:09 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/26 10:24:43 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	free_node(t_build *data)
+void	print_stack(t_stack *stk)
 {
-	if (data && data->a.array)
-	{
-		free(data->a.array);
-	}
-	if (data && data->b.array)
-	{
-		free(data->b.array);
-	}
-}
+	int	i;
+	int	size;
 
-void	ft_error(t_build *data)
-{
-	free_node(data);
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
-
-void	cleanup_and_error(t_build *data, int *numbers)
-{
-	free(numbers);
-	ft_error(data);
+	size = current_size(stk);
+	i = 1;
+	while (i <= size)
+	{
+		printf("%d\n", get_value_at(stk, i));
+		i++;
+	}
 }
