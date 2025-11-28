@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_initz.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 17:10:37 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 17:10:37 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 13:08:04 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 13:22:36 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-
 int	main(int argc, char **argv)
 {
-	t_build	data;
-	t_bucket bucket;
-	t_chunck chunk;
-	t_stack	stack;
+	t_build		data;
+	t_bucket	bucket;
+	t_chunck	chunk;
+	t_stack		stack;
 
+	if (argc <= 1)
+		return (0);
+	if (argc == 2 && !*argv[1])
+		return (0);
 	ft_memset(&data, 0, sizeof(data));
 	ft_memset(&bucket, 0, sizeof(bucket));
 	ft_memset(&chunk, 0, sizeof(chunk));
 	ft_memset(&stack, 0, sizeof(stack));
-	if (argc == 1)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
-	}
 	ft_parsing(argv, &data);
 	ft_execute(&data);
 	free_node(&data);

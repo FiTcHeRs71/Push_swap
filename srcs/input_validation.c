@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:32:09 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 14:32:47 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 13:41:07 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 13:57:43 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_counter(char const *s, char c)
+int	ft_counter(char *s, char c)
 {
 	int	count;
 	int	i;
@@ -31,9 +31,10 @@ int	ft_counter(char const *s, char c)
 		while ((s[i] && s[i] != c))
 			i++;
 	}
-	if (count == 1)
+	if (count <= 1)
 	{
-		ft_printf("Error\n");
+		free(s);
+		//ft_putstr_fd("Error\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	return (count);
@@ -68,7 +69,7 @@ bool	check_arg_is_digit(char *str)
 	return (true);
 }
 
-void	check_duplicate_numbers(t_build *data, int *numbers, int len)
+bool	check_duplicate_numbers(int *numbers, int len)
 {
 	int	i;
 	int	j;
@@ -81,11 +82,11 @@ void	check_duplicate_numbers(t_build *data, int *numbers, int len)
 		{
 			if (numbers[i] == numbers[j])
 			{
-				free(numbers);
-				ft_error(data);
+				return(false);
 			}
 			j++;
 		}
 		i++;
 	}
+	return(true);
 }

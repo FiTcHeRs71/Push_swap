@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 17:10:59 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 17:10:59 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 11:51:37 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 12:47:24 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 	size_t	i;
 
 	i = 0;
-	numbers = ft_calloc(len , sizeof(int));
+	numbers = ft_calloc(len, sizeof(int));
 	if (!numbers)
-	{
 		ft_error(data);
-	}
 	while (argv[i])
 	{
 		if (!check_arg_is_digit(argv[i]))
@@ -54,10 +52,15 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 			free(numbers);
 			ft_error(data);
 		}
-		numbers[i - 1] = ft_atoi(argv[i]);
+		numbers[i] = ft_atoi(argv[i]);
 		i++;
 	}
-	check_duplicate_numbers(data, numbers, len);
+	if(!check_duplicate_numbers(numbers, len))
+	{
+		ft_free_2d_array(argv, len);
+		free(numbers);
+		ft_error(data);
+	}
 	numbers_mapping(numbers, stk->array, len);
 	stk->bot = len - 1;
 	free(numbers);
@@ -65,7 +68,7 @@ void	fill_stack(t_build *data, t_stack *stk, int len, char **argv)
 
 void	init_stack(t_build *data, t_stack *stk, int len)
 {
-	stk->array = ft_calloc(len , sizeof(int));
+	stk->array = ft_calloc(len, sizeof(int));
 	if (!stk->array)
 	{
 		ft_error(data);
@@ -73,7 +76,6 @@ void	init_stack(t_build *data, t_stack *stk, int len)
 	stk->top = 0;
 	stk->bot = 0;
 	stk->size = len;
-	ft_bzero(stk->array, len);
 }
 
 void	checking_elements(char **elements, int size)
@@ -90,5 +92,17 @@ void	checking_elements(char **elements, int size)
 			exit(EXIT_FAILURE);
 		}
 		i++;
+	}
+}
+
+void	init_data(int size, char **elements, t_build *data)
+{
+	init_stack(data, &data->a, size);
+	init_stack(data, &data->b, size);
+	fill_stack(data, &data->a, size, elements);
+	if (checking_is_already_sort(data, 1))
+	{
+		free_node(data);
+		exit(EXIT_SUCCESS);
 	}
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:45:25 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 11:45:25 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 12:54:20 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 12:54:20 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sort_chunk(t_build *data, t_chunck *to_chunck);
 void	sort_one(t_build *data, t_chunck *to_chunck);
 void	sort_two(t_build *data, t_chunck *to_chunck);
 
-// check_quick_sort.c
+// sort_optimize.c
 void	check_quick_sort(t_build *data, t_chunck *to_chunck);
 void	quick_sort_second(t_build *data, t_chunck *to_chunck);
 void	process_top_b(t_build *data, t_chunck *to_chunck);
@@ -65,7 +65,7 @@ void	process_three_bot_a(t_build *data, t_chunck *to_chunck, t_stack *stk,
 void	process_three_bot_b(t_build *data, t_chunck *to_chunck, t_stack *stk,
 			int max);
 
-// split_chunck.c
+// chunck_split.c
 void	split_chunk(t_build *data, t_chunck *to_chunck, t_bucket *dest);
 void	init_size(t_chunck *low, t_chunck *mid, t_chunck *high);
 void	setup_loc_split(t_loc loc, t_chunck *low, t_chunck *mid,
@@ -78,4 +78,25 @@ bool	checking_is_already_sort(t_build *data, int start);
 bool	check_consecutive(int a, int b, int c, int d);
 void	swap_three_numbers(int *a, int *b, int *c);
 
+// ft_execute.c
+void	ft_execute(t_build *data);
+void	quick_three(t_build *data);
+void	quick_five(t_build *data);
+
+// sort_hunk.c
+void	chunck_stack(t_build *data);
+bool	check_arg_is_digit(char *str);
+bool	check_duplicate_numbers(int *elements, int len);
+int		ft_counter(char *s, char c);
+
+// stack_initz.c
+void	numbers_mapping(int *numbers, int *rank, int len);
+void	fill_stack(t_build *data, t_stack *stk, int len, char **argv);
+void	init_stack(t_build *data, t_stack *stk, int len);
+void	checking_elements(char **elements, int size);
+void	init_data(int argc, char **argv, t_build *data);
+
+// ft_parsing.c
+void	ft_parsing(char **argv, t_build *data);
+char	*ft_concat_args(char **argv, char *line, t_build *data);
 #endif

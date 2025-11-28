@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 17:16:59 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 17:17:19 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 13:35:00 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 13:37:41 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_build	data;
-	char	*line;
-	char	*trimmed;
+	t_stack	stack;
 
-	ft_cheking_argc_argv(argc, argv, &data);
-	line = get_next_line(0);
-	while (line)
-	{
-		trimmed = ft_strtrim(line, "\n");
-		free(line);
-		if (!trimmed)
-			ft_error(&data);
-		execute_instruction(&data, trimmed);
-		free(trimmed);
-		line = get_next_line(0);
-	}
+	if (argc <= 1)
+		return (0);
+	if (argc == 2 && !*argv[1])
+		return (0);
+	ft_memset(&data, 0, sizeof(data));
+	ft_memset(&stack, 0, sizeof(stack));
+	ft_parsing(argv, &data);
+	pick_up_instruction_execute(&data);
 	if (checking_is_already_sort(&data, 1) && current_size(&data.b) == 0)
 		ft_printf("OK\n");
 	else
@@ -43,8 +38,6 @@ void	ft_cheking_argc_argv(int argc, char **argv, t_build *data)
 	int		size;
 	char	**elements;
 
-	if (argc == 1)
-		exit(0);
 	if (argc == 2)
 	{
 		elements = ft_split(argv[1], ' ');
@@ -55,4 +48,24 @@ void	ft_cheking_argc_argv(int argc, char **argv, t_build *data)
 	}
 	else if (argc > 2)
 		init_data(argc, argv, &(*data));
+}
+void	pick_up_instruction_execute(t_build *data)
+{
+	char *line;
+	char *trimmed;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		trimmed = ft_strtrim(line, "\n");
+		free(line);
+		if (!trimmed)
+			ft_error(data);
+		if (!execute_instruction(data, trimmed))
+		{
+			ft_error(data);
+		}
+		free(trimmed);
+		line = get_next_line(0);
+	}
 }

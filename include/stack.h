@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 16:36:47 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/27 16:36:47 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/28 11:02:18 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/28 11:03:18 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,33 +50,5 @@ typedef struct s_bucket
 	t_chunck	mid;
 	t_chunck	high;
 }				t_bucket;
-
-// ft_execute.c
-void			ft_execute(t_build *data);
-void			quick_three(t_build *data);
-void			quick_five(t_build *data);
-
-// chunck_stack.c
-void			chunck_stack(t_build *data);
-void			go_to_chunck(t_build *data, t_chunck *all_chunck);
-
-bool			check_arg_is_digit(char *str);
-void			check_duplicate_numbers(t_build *data, int *numbers, int len);
-int				ft_counter(char const *s, char c);
-
-// stack_initz.c
-void			numbers_mapping(int *numbers, int *rank, int len);
-void			fill_stack(t_build *data, t_stack *stk, int len, char **argv);
-void			fill_stack_split(t_build *data, t_stack *stk, int len,
-					char **argv);
-void			init_stack(t_build *data, t_stack *stk, int len);
-void			checking_elements(char **elements, int size);
-
-// initz_utils.c
-void			init_data(int argc, char **argv, t_build *data);
-void			init_data_split(int argc, char **argv, t_build *data);
-
-// ft_parsing.c
-void	ft_parsing(char **argv, t_build *data);
 
 #endif
