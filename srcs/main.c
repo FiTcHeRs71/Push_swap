@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 13:08:04 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 13:22:36 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/29 11:42:04 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/29 11:46:16 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 	ft_memset(&bucket, 0, sizeof(bucket));
 	ft_memset(&chunk, 0, sizeof(chunk));
 	ft_memset(&stack, 0, sizeof(stack));
+	ft_define_flag(&data);
 	ft_parsing(argv, &data);
 	ft_execute(&data);
 	free_node(&data);

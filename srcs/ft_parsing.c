@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 14:21:22 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 14:21:22 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/29 11:47:51 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/29 11:48:43 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,8 @@ char	*ft_concat_args(char **argv, char *line, t_build *data)
 		i++;
 	}
 	return (line);
+}
+void	ft_define_flag(t_build *data)
+{
+	data->flag = 1;
 }

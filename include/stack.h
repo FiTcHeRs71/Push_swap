@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 11:02:18 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 11:03:18 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/29 11:41:42 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/29 11:41:55 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_build
 {
 	t_stack		a;
 	t_stack		b;
+	int			flag;
 }				t_build;
 
 typedef enum s_loc

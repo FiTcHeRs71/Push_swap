@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:03:19 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 15:05:32 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/29 11:50:15 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/29 11:50:23 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	init_data(int size, char **elements, t_build *data)
 	init_stack(data, &data->a, size);
 	init_stack(data, &data->b, size);
 	fill_stack(data, &data->a, size, elements);
-	if (checking_is_already_sort(data, 1))
+	if (checking_is_already_sort(data, 1) && data->flag == 1)
 	{
 		ft_free_2d_array(elements, size);
 		free_node(data);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 15:01:01 by fducrot           #+#    #+#             */
-/*   Updated: 2025/11/28 15:01:08 by fducrot          ###   ########.ch       */
+/*   Created: 2025/11/29 11:47:13 by fducrot           #+#    #+#             */
+/*   Updated: 2025/11/29 11:47:34 by fducrot          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,5 @@ void	init_data(int argc, char **argv, t_build *data);
 // ft_parsing.c
 void	ft_parsing(char **argv, t_build *data);
 char	*ft_concat_args(char **argv, char *line, t_build *data);
+void	ft_define_flag(t_build *data);
 #endif
