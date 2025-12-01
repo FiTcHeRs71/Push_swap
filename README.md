@@ -175,7 +175,7 @@ sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr
 | 3    | 3 operations         | ≤ 2               |
 | 5    | 12 operations        | ≤ 8               |
 | 100  | 700 operations       | ~550 average      |
-| 500  | 5500 operations      | ~4500 average     |
+| 500  | 5500 operations      | ~4200 average     |
 
 ### Test Script
 
