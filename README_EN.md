@@ -2,10 +2,6 @@
 
 > 42 School Project - Sorting algorithm with a limited set of instructions
 
-[![42 School](https://img.shields.io/badge/42-School-blue)](https://42.fr)
-[![Language](https://img.shields.io/badge/Language-C-orange)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![Norminette](https://img.shields.io/badge/Norminette-passing-success)](https://github.com/42School/norminette)
-
 ## 📋 Table of Contents
 
 - [About](#-about)
@@ -74,12 +70,12 @@ The algorithm recursively divides the stack into 3 parts:
 
 ```
 ┌─────────────────────────────────────────┐
-│           SPLIT CHUNK                    │
-│                                          │
+│           SPLIT CHUNK                   │
+│                                         │
 │   TOP_A ──► High → BOT_A                │
 │           │ Mid  → TOP_B                │
 │           └ Low  → BOT_B                │
-│                                          │
+│                                         │
 │   Then recursion on each part           │
 └─────────────────────────────────────────┘
 ```
@@ -187,7 +183,7 @@ sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr
 
 ```bash
 # Run performance tests
-chmod +x test.sh
+chmod +777 test.sh
 ./test.sh
 ```
 
@@ -275,7 +271,7 @@ typedef enum s_loc
 
 | Command | Description |
 |---------|-------------|
-| `make` | Compiles the push_swap program |
+| `make`  | Compiles the push_swap program |
 | `make bonus` | Compiles the checker |
 | `make clean` | Removes object files |
 | `make fclean` | Removes object files and executables |

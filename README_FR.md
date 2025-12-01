@@ -2,9 +2,6 @@
 
 > Projet 42 - Algorithme de tri avec un ensemble limité d'instructions
 
-[![42 School](https://img.shields.io/badge/42-School-blue)](https://42.fr)
-[![Language](https://img.shields.io/badge/Language-C-orange)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![Norminette](https://img.shields.io/badge/Norminette-passing-success)](https://github.com/42School/norminette)
 
 ## 📋 Table des matières
 
@@ -74,12 +71,12 @@ L'algorithme divise récursivement la pile en 3 parties :
 
 ```
 ┌─────────────────────────────────────────┐
-│           SPLIT CHUNK                    │
-│                                          │
+│           SPLIT CHUNK                   │
+│                                         │
 │   TOP_A ──► High → BOT_A                │
 │           │ Mid  → TOP_B                │
 │           └ Low  → BOT_B                │
-│                                          │
+│                                         │
 │   Puis récursion sur chaque partie      │
 └─────────────────────────────────────────┘
 ```
